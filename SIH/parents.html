@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="image/logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Class</a></li>
+            <li><a href="#">Schedular</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">About</a></li>
+            
+        </ul>
+    </nav>
+    
+
+
+            
+    <section class="section">
+        <div class="slider">
+            <div class="slide">
+                <!-- Slide Images -->
+                <div class="st first">
+                    <img src="image/parents-1.png" alt="Image 1">
+                </div>
+                <div class="st">
+                    <img src="image/parents-2.png" alt="Image 2">
+                </div>
+                <div class="st">
+                    <img src="image/parents-3.png" alt="Image 3">
+                </div>
+                <div class="st">
+                    <img src="image/parents-4.png" alt="Image 4">
+                </div>
+            </div>
+
+            <!-- Auto Navigation Dots -->
+            <div class="nav-auto">
+                <div class="a-b1"></div>
+                <div class="a-b2"></div>
+                <div class="a-b3"></div>
+                <div class="a-b4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+
+        <h1 class="heading"> Empowering Parents, <span>Shaping Futures</span> </h1>
+    
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Student Progress</h3>
+                <p>Track your child's academic growth and development with detailed performance insights and progress reports.</p>
+                <a href=".html" class="btn"> View Progress <span class="fas fa-chevron-right"></span> </a>
+            </div>
+    
+            <div class="box">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Attendance Monitoring</h3>
+                <p>Stay informed with real-time attendance tracking and ensure your child maintains consistent participation.</p>
+                <a href=".html" class="btn"> Check Attendance <span class="fas fa-chevron-right"></span> </a>
+            </div>
+    
+            <div class="box">
+                <i class="fas fa-book"></i>
+                <h3>Resource of Parents</h3>
+                <p>Access valuable resources and guides to support your child's education journey and enhance learning at home.</p>
+                <a href=".html" class="btn"> Explore Resources <span class="fas fa-chevron-right"></span> </a>
+            </div>
+    
+            <div class="box">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Councelling In Support</h3>
+                <p>Find personalized guidance and emotional support to help your child navigate academic and personal challenges.</p>
+                <a href=".html" class="btn"> Get Support <span class="fas fa-chevron-right"></span> </a>
+            </div>
+    
+            
+    
+        </div>
+    
+    </section>
+
+    <section class="footer">
+
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>Help & Support</h3>
+                <a href="#home"> <i class="fas fa-chevron-right"></i> home </a>
+                <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
+                <a href="#services"> <i class="fas fa-chevron-right"></i> services </a>
+                
+            </div>
+    
+            <div class="box">
+                <h3>Contact Details</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +8805555238801 </a>
+                <a href="#"> <i class="fas fa-phone"></i> +880100046978 </a>
+            </div>
+    
+            <div class="box">
+                <h3>Social Media </h3>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+    
+            </div>
+    
+            <div class="box">
+                <h3>Email-ID</h3>
+                <a href="#"> <i class="fas fa-envelope"></i> tannu@gmail.com </a>
+                <a href="#"> <i class="fas fa-envelope"></i> komal@gmail.com </a>
+                <a href="#"> <i class="fas fa-envelope"></i> simran@gmai.com </a>
+            </div>
+            
+    
+        </div>
+    
+        <div class="credit"> 
+            <p>Website designed and developed by <span>Innovators Hub</span></p> 
+            <p>&copy; 2024 All rights reserved.</p>
+            <p>Powered by umeed | Terms of Service | Privacy Policy</p>
+        </div>
+    
+    </section>
+
+
+
+    <!-- JavaScript for Timer-based Auto Slide -->
+    <script type="text/javascript">
+        var counter = 1;
+        var slideElement = document.querySelector('.slide');
+        var autoSlide;
+
+        // Function to set the margin-left for sliding images
+        function setSlidePosition(counter) {
+            slideElement.style.marginLeft = -(counter - 1) * 100 + '%';
+        }
+
+        // Function to start the automatic slide
+        function startAutoSlide() {
+            autoSlide = setInterval(function () {
+                counter++;
+                if (counter > 4) {
+                    counter = 1;
+                }
+                setSlidePosition(counter);
+            }, 1500);
+        }
+
+        // Start the auto slide
+        startAutoSlide();
+
+        // Pause on hover and resume when mouse leaves
+        var slider = document.querySelector('.slider');
+
+        slider.addEventListener('mouseenter', function () {
+            clearInterval(autoSlide);
+        });
+
+        slider.addEventListener('mouseleave', function () {
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
